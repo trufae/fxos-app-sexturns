@@ -2,12 +2,16 @@
   "name": "SexTurns",
   "description": "Turn based erotic game",
   "launch_path": "/index.html",
+  "version": "1.0",
+  "developer": {
+    "name": "pancake",
+    "url": "http://hass.ffos.lolcathost.org/"
+  },
   "icons": {
     "16": "/icons/icon16x16.png",
     "48": "/icons/icon48x48.png",
     "60": "/icons/icon60x60.png",
     "128": "/icons/icon128x128.png"
   },
-  "orientation":["portrait"],
-  "permissions": {}
+  "orientation":["portrait"]
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>SexTurns</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="lang.js" defer></script>
+    <script src="game.js" defer></script>
+  </head>
+  <body id="body">
+<div id="content" class="content">
+
+<table><tr><td align="left">
+    <input style="width:32px" type="submit" value="&lt;" id="sortir" />
+</td><td>
+    <h1 id="nom"></h1>
+</td></tr></table>
+<table><tr><td>
+    <input type="submit" value="Canvi!" id="canvi" />
+</td></tr></table>
+<div 
+ style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;' 
+ unselectable='on'
+ onselectstart='return false;' 
+ onmousedown='return false;'>
+    <br />
+    <div class="accio" id="verb">&nbsp;</div>
+    <div class="accio" id="lloc">&nbsp;</div>
+    <div class="accio" id="com">&nbsp;</div>
+        <div class="countdown" id="quan">&nbsp;</div>
+
+    </center>
+</div>
+</div>
+<div id="bottom" class="bottom">
+<table><tr><td>
+<input style="width:100%" type="submit" value="A jugar!" id="jugar" />
+</td></tr></table>
+</div>
+<audio id="ding" src="ding.mp3"></audio>
+  </body>
+
+</html>

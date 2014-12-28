@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>SexTurns</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+      body {
+        overflow: hidden;
+      }
+      td {
+        text-align:center;
+        height:32px;
+        border:0px;
+      }
+    </style>
+
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    <script src="lang.js" defer></script>
+    <script src="edit.js" defer></script>
+
+  </head>
+
+  <body>
+<div class="content">
+    <table><tr><td style="text-align:left">
+        <input class="back" type="submit" value="&lt;" id="sortir">
+      </td><td>
+        <input type="submit" value="Auto" id="auto">
+      </td><td>
+        <input type="submit" value="Desar" id="desar">
+      </td></tr>
+    </table>
+    <br />
+<textarea rows=10 id="data">
+    </textarea>
+</div>
+  </body>
+
+</html>

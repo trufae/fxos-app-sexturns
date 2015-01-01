@@ -79,6 +79,7 @@ function flashScreen(reset) {
   if (reset) {
     setColors (true);
   } else {
+    clearInterval (bgflash);
     bgflash = setInterval (function() {
       inverse = !inverse;
       setColors (inverse);
@@ -132,23 +133,27 @@ window.addEventListener("load", function() {
     running = true;
     counter = 0;
     timeleft = 0;
+    clearInterval (int);
     int = setInterval (function() {
       g('verb').innerHTML = randomVerb();
       g('lloc').innerHTML = randomLloc();
       g('com').innerHTML = randomCom();
       counter++;
-      if (counter == 50) {
+      if (counter == 30) {
         clearInterval (int);
         running = false;
         timebase = +get("duration");
         timeleft = 0 | ((Math.random() * plays) + 5);
         timeleft += timebase;
         setTimeout(function() {
-          g('quan').innerHTML = timeleft;
+          if (timeleft>0)
+            g('quan').innerHTML = timeleft;
+	  clearInterval (int2);
           int2 = setInterval(function() {
             timeleft--;
             g('quan').innerHTML = timeleft;
             if (+timeleft < 1) {
+              timeleft = 0;
               plays++;
               clearInterval (int2);
               flashScreen ();

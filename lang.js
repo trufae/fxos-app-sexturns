@@ -1,6 +1,7 @@
 
 var lang = {
   "ca": {
+    name: "Català",
     how: ["fort", "suau", "rapid", "lent"],
     actions: ["mossegar", "xuclar", "petons", "apretar", "pessigar", "massatge"],
     places: ["pits", "genitals", "mugrons", "coll", "llavis", "orella", "cli/gland", "cul"],
@@ -24,6 +25,7 @@ var lang = {
     }
   },
   "es": {
+    name: "Español",
     how: ["fuerte", "suave", "rápido", "lento"],
     actions: ["morder", "chupar", "besos", "apretar", "pellizcar", "masaje"],
     places: ["pechos", "genitales", "pezones", "cuello", "labios", "oreja", "cli/glande", "culo"],
@@ -47,6 +49,7 @@ var lang = {
     }
   },
   "en": {
+    name: "English",
     how: ["hard", "soft", "quick", "slow"],
     actions: ["bit", "suck", "kiss", "press", "pinch", "massage"],
     places: ["tits", "genitals", "nipples", "neck", "lips", "ear", "cli/gland", "ass"],
@@ -71,7 +74,12 @@ var lang = {
   }
 }
 
-/////////////////////////////////////////////////////////////////////////////
+var langs = [];
+for (var a in lang) {
+  langs[langs.length] = a;
+}
+
+///////////////////////////////////////////////////////////////////////////////
 function setCurLang(n) {
   if (lang[n]) {
     localStoraget.setItem("lang", n);
@@ -79,7 +87,7 @@ function setCurLang(n) {
 }
 
 function getCurLang() {
-  var curlang = localStorage.getItem ("lang");
+  var curlang = localStorage.getItem ('lang');
   if (!curlang) {
     var navlang = window.navigator.language.substring(0, 2);
     if (lang[navlang]) {
@@ -87,13 +95,14 @@ function getCurLang() {
     } else {
       curlang = "en";
     }
-    localStorage.setItem ("lang", curlang);
+    localStorage.setItem ('lang', curlang);
   }
   return curlang;
 }
 
 function getLang() {
-  return lang[getCurLang()];
+  var l = lang[getCurLang()];
+  return l ? l : lang.en;
 }
 
 function getString(s) {

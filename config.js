@@ -48,12 +48,19 @@ function loadLanguage() {
 }
 
 window.addEventListener("DOMContentLoaded", function() {
+  /* create <select> for languages */
+  var div = document.getElementById('select_lang');
+  var str = '<select id="lang">';
+  for (var a in lang) {
+    str += '<option value="' + a + '">' + lang[a].name + '</option>';
+  }
+  str += '</select>';
+  div.innerHTML = str;
   /* load fields data */
   try {
     var d = get('duration');
     g('duration').value = d ? "" + d : "40";
-    g('lang').selectedIndex = ["ca", "en", "es"].indexOf (get('lang'));
-
+    g('lang').selectedIndex = langs.indexOf (get('lang'));
   } catch ( e ) {}
   g('lang').onchange = function() {
     var oldlang = get('lang');

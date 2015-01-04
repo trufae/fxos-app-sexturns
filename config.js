@@ -94,6 +94,11 @@ window.addEventListener("DOMContentLoaded", function() {
       g('sound').value = getString ('silence');
     }
   });
+  g('duration').onkeydown =function(ev) {
+    if (ev.keyCode==13) {
+      g('duration').blur();
+    }
+  };
   onClick (g('desar'), function() {
     set('sound', (g('sound').value == getString('silence')) ? "false" : "true");
     set('duration', g('duration').value);

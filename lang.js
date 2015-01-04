@@ -27,7 +27,7 @@ var lang = {
   'en': {
     name: 'English',
     how: ['hard', 'soft', 'quick', 'slow'],
-    actions: ['bit', 'suck', 'kiss', 'tighten', 'pinch', 'massage'],
+    actions: ['bite', 'suck', 'kiss', 'tighten', 'pinch', 'massage'],
     places: ['tits', 'genitals', 'nipples', 'neck', 'lips', 'ear', 'cli/gland', 'ass'],
     strings: {
       firstplayer: 'First Player',

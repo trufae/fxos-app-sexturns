@@ -65,13 +65,13 @@ window.addEventListener("DOMContentLoaded", function() {
   g('lloc1').value = g('lloc2').value = getString ('places');
   g('verb1').value = g('verb2').value = getString ('actions');
 
-  g('nom1').onkeydown =function(ev) {
-    if (ev.keyCode==13) {
+  g('nom1').onkeydown = function(ev) {
+    if (ev.keyCode == 13) {
       g('nom1').blur();
     }
   };
-  g('nom2').onkeydown =function(ev) {
-    if (ev.keyCode==13) {
+  g('nom2').onkeydown = function(ev) {
+    if (ev.keyCode == 13) {
       g('nom2').blur();
     }
   };

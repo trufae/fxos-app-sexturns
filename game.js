@@ -82,6 +82,11 @@ function flashScreen(reset) {
 }
 
 function ding() {
+  var hasSound = get('sound') == "true";
+  alert(get('sound'));
+  if (!hasSound) {
+    return;
+  }
   var audio = g('ding');
   try {
     audio.pause();
@@ -120,9 +125,9 @@ window.addEventListener("load", function() {
   var counter = 0
 
   onClick (g('jugar'), function() {
-if (g('jugar').disabled)
-return;
-g('jugar').disabled=true;
+    if (g('jugar').disabled)
+      return;
+    g('jugar').disabled = true;
     if (running)
       return false;
     g('bubble').style.visibility = 'hidden';
@@ -140,14 +145,15 @@ g('jugar').disabled=true;
       if (counter == 30) {
         clearIntervals ();
         timebase = +get("duration");
-        timeleft = ((Math.random() * plays) + 5) |0;
+        timeleft = ((Math.random() * plays) + 5) | 0;
         timeleft += timebase;
         setTimeout(function() {
-running = false;
-g('jugar').disabled=false;
-          if (timeleft>0)
+          running = false;
+          g('jugar').disabled = false;
+          if (timeleft > 0) {
             g('quan').innerHTML = timeleft;
-	  clearInterval (int2);
+          }
+          clearInterval (int2);
           int2 = setInterval(function() {
             timeleft--;
             g('quan').innerHTML = timeleft;

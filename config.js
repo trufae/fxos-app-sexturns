@@ -41,7 +41,7 @@ function loadLanguage() {
   g('datareset').value = getString ('reset');
   g('desar').value = getString ('save');
   if (get('sound') == "true") {
-    g('sound').value = getString('withsound');
+    g('sound').value = getString ('withsound');
   } else {
     g('sound').value = getString ('silence');
   }

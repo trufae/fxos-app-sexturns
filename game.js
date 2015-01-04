@@ -56,21 +56,15 @@ function randomCom() {
 
 function setColors(inverse) {
   if (inverse) {
-    document.body.style.background = "";
-    g('content').style.background = "";
-    g('bottom').style.background = "#303030";
     g('verb').style.color = "white";
     g('lloc').style.color = "white";
     g('com').style.color = "white";
     g('quan').style.color = "yellow";
   } else {
-    document.body.style.background = "white";
-    g('content').style.background = "white";
-    g('bottom').style.background = "white";
-    g('verb').style.color = "black";
-    g('lloc').style.color = "black";
-    g('com').style.color = "black";
-    g('quan').style.color = "green";
+    g('verb').style.color = "#E62EB8";
+    g('lloc').style.color = "#E62EB8";
+    g('com').style.color = "#E62EB8";
+    g('quan').style.color = "#E62EB8";
   }
 }
 
@@ -126,9 +120,13 @@ window.addEventListener("load", function() {
   var counter = 0
 
   onClick (g('jugar'), function() {
+if (g('jugar').disabled)
+return;
+g('jugar').disabled=true;
     if (running)
       return false;
-    clearIntervals ();
+    g('bubble').style.visibility = 'hidden';
+    g('bubble2').style.visibility = 'hidden';
     setColors (true);
     running = true;
     counter = 0;
@@ -140,12 +138,13 @@ window.addEventListener("load", function() {
       g('com').innerHTML = randomCom();
       counter++;
       if (counter == 30) {
-        clearInterval (int);
-        running = false;
+        clearIntervals ();
         timebase = +get("duration");
-        timeleft = 0 | ((Math.random() * plays) + 5);
+        timeleft = ((Math.random() * plays) + 5) |0;
         timeleft += timebase;
         setTimeout(function() {
+running = false;
+g('jugar').disabled=false;
           if (timeleft>0)
             g('quan').innerHTML = timeleft;
 	  clearInterval (int2);

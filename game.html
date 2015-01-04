@@ -11,16 +11,17 @@
     <script src="game.js" defer></script>
   </head>
   <body id="body">
+<div class="topbar">
+<table><tr><td align="left" style="padding-left:10px">
+    <input style="width:32px" type="submit" value="&lt;" id="sortir" />
+</td><td style="width:100%">
+<div id="canvi" style="text-align:left">
+    <h1 id="nom"></h1>
+</div>
+</td></tr></table>
+</div>
 <div id="content" class="content">
 
-<table><tr><td align="left">
-    <input style="width:32px" type="submit" value="&lt;" id="sortir" />
-</td><td>
-    <h1 id="nom"></h1>
-</td></tr></table>
-<table><tr><td>
-    <input type="submit" value="Canvi!" id="canvi" />
-</td></tr></table>
 <div 
  style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;' 
  unselectable='on'>
@@ -31,12 +32,20 @@
     <div class="countdown" id="quan">&nbsp;</div>
 </div>
 </div>
-<div id="bottom" class="bottom">
-<table><tr><td>
-<input style="width:100%" type="submit" value="A jugar!" id="jugar" />
-</td></tr></table>
+
+<div class=bubble id="bubble">
+Tap name to change player
 </div>
+
+<div class=bubble2 id="bubble2">
+Tap here to start
+</div>
+
+<div id="bottom" class="bottom" style="width:310px;font-size:1.3em">
+<input style="height:64px" type="submit" value="A jugar!" id="jugar" />
+</div>
+
 <audio id="ding" src="ding.mp3"></audio>
-  </body>
+</body>
 
 </html>

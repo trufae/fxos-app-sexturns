@@ -24,6 +24,54 @@ var lang = {
       jugar: 'A Jugar!'
     }
   },
+  'en': {
+    name: 'English',
+    how: ['hard', 'soft', 'quick', 'slow'],
+    actions: ['bit', 'suck', 'kiss', 'tighten', 'pinch', 'massage'],
+    places: ['tits', 'genitals', 'nipples', 'neck', 'lips', 'ear', 'cli/gland', 'ass'],
+    strings: {
+      firstplayer: 'First Player',
+      secondplayer: 'Second Player',
+      actions: 'Actions',
+      places: 'Places',
+      configure: 'Options',
+      start: 'Start!',
+      idioma: 'Language',
+      duration: 'Duration of actions (in seconds)',
+      audio: 'Audio Ding',
+      silence: 'Silence',
+      withsound: 'Sound Enabled',
+      reset: 'Reset',
+      resetconfirm: 'Confirm Reset?',
+      save: 'Save',
+      canvi: 'Change',
+      jugar: 'Play!'
+    }
+  },
+  'eo': {
+    name: 'Esperanto',
+    how: ['maldolĉe', 'dolĉe', 'rapide', 'malrapide'],
+    actions: ['mordi', 'suĉi', 'kisi', 'stringi', 'pinĉi', 'masaĝi'],
+    places: ['la mamon', 'la testikon', 'la cicon', 'la kolon', 'la lipon', 'la orelon', 'la clitoron/glanon', 'la pugon'],
+    strings: {
+      firstplayer: 'Unua ludanto',
+      secondplayer: 'Dua ludanto',
+      actions: 'Agoj',
+      places: 'Lokoj',
+      configure: 'Opcioj',
+      start: 'Ek!',
+      idioma: 'Lingvoj',
+      duration: 'Daŭro de agoj (sekundojn)',
+      audio: 'Sonorilo',
+      silence: 'Silentigi',
+      withsound: 'Sonoj enŝaltitaj',
+      reset: 'Rekomencigi',
+      resetconfirm: 'Ĉu vi konfirmas rekomencigon?',
+      save: 'Konservi',
+      canvi: 'Ŝanĝi',
+      jugar: 'Ludi!'
+    }
+  },
   'es': {
     name: 'Español',
     how: ['fuerte', 'suave', 'rápido', 'lento'],
@@ -48,28 +96,28 @@ var lang = {
       jugar: 'A Jugar!'
     }
   },
-  'en': {
-    name: 'English',
-    how: ['hard', 'soft', 'quick', 'slow'],
-    actions: ['bit', 'suck', 'kiss', 'tight', 'pinch', 'massage'],
-    places: ['tits', 'genitals', 'nipples', 'neck', 'lips', 'ear', 'cli/gland', 'ass'],
+  'it': {
+    name: 'Italiano',
+    how: ['forte', 'dolcemente', 'velocemente', 'lentamente'],
+    actions: ['mordi', 'succhia', 'bacia', 'premi', 'pizzica', 'massaggia'],
+    places: ['le tette', 'i genitali', 'i capezzoli', 'il collo', 'le labbra', 'l\'orecchio', 'il clitoride/il glande', 'il culo'],
     strings: {
-      firstplayer: 'First Player',
-      secondplayer: 'Second Player',
-      actions: 'Actions',
-      places: 'Places',
-      configure: 'Options',
-      start: 'Start!',
-      idioma: 'Language',
-      duration: 'Duration of actions (in seconds)',
-      audio: 'Audio Ding',
-      silence: 'Silence',
-      withsound: 'Sound Enabled',
+      firstplayer: 'Primo giocatore',
+      secondplayer: 'Secondo giocatore',
+      actions: 'Azioni',
+      places: 'Luoghi',
+      configure: 'Opzioni',
+      start: 'Incomincia!',
+      idioma: 'Lingua',
+      duration: 'Durata delle azioni (in secondi)',
+      audio: 'Suono',
+      silence: 'Muto',
+      withsound: 'Suoni attivati',
       reset: 'Reset',
-      resetconfirm: 'Confirm Reset?',
-      save: 'Save',
-      canvi: 'Change',
-      jugar: 'Play!'
+      resetconfirm: 'Confermi il reset?',
+      save: 'Salva',
+      canvi: 'Cambia',
+      jugar: 'Gioca!'
     }
   },
   'tp': {

@@ -14,14 +14,20 @@ var lang = {
       start: 'Començar',
       idioma: 'Idioma',
       duration: 'Duració de les accions (en segons)',
-      audio: 'Senyalització Auditiva',
+      audio: 'Senyalitzacions',
+      vibrate: 'Vibrar',
+      novibrate: 'No vibrar',
       silence: 'Silenci',
       withsound: 'So Habilitat',
       reset: 'Esborrar-ho Tot',
       resetconfirm: 'Esborrar totes les dades?',
       save: 'Desar',
       canvi: 'Canvi!',
-      jugar: 'A Jugar!'
+      jugar: 'A Jugar!',
+      jugar_next: 'Següent jugador!',
+      jugar_shuffle: 'Repetir',
+      bubble: 'Prem aquí per canviar',
+      bubble2: 'Clicka aqui per començar'
     }
   },
   'en': {
@@ -45,14 +51,18 @@ var lang = {
       resetconfirm: 'Confirm Reset?',
       save: 'Save',
       canvi: 'Change',
-      jugar: 'Play!'
+      jugar: 'Play!',
+      jugar_next: 'Next player!',
+      jugar_shuffle: 'Shuffle',
+      bubble: 'Tap name to change player',
+      bubble2: 'Tap here to start'
     }
   },
   'eo': {
     name: 'Esperanto',
     how: ['maldolĉe', 'dolĉe', 'rapide', 'malrapide'],
-    actions: ['mordi', 'suĉi', 'kisi', 'stringi', 'pinĉi', 'masaĝi'],
-    places: ['la mamon', 'la testikon', 'la cicon', 'la kolon', 'la lipon', 'la orelon', 'la clitoron/glanon', 'la pugon'],
+    actions: ['mordi la', 'suĉi la', 'kisi la', 'stringi la', 'pinĉi la', 'masaĝi la'],
+    places: ['mamon', 'testikon', 'cicon', 'kolon', 'lipon', 'orelon', 'clitoron/glanon', 'pugon'],
     strings: {
       firstplayer: 'Unua ludanto',
       secondplayer: 'Dua ludanto',
@@ -69,7 +79,11 @@ var lang = {
       resetconfirm: 'Ĉu vi konfirmas rekomencigon?',
       save: 'Konservi',
       canvi: 'Ŝanĝi',
-      jugar: 'Ludi!'
+      jugar: 'Ludi!',
+      jugar_next: 'Proksima ludanto!',
+      jugar_shuffle: 'Miksi!',
+      bubble: 'Tap name to change player',
+      bubble2: 'Tap here to start'
     }
   },
   'es': {
@@ -93,7 +107,11 @@ var lang = {
       resetconfirm: 'Eliminar Datos?',
       save: 'Grabar',
       canvi: 'Cambio!',
-      jugar: 'A Jugar!'
+      jugar: 'A Jugar!',
+      jugar_next: 'Siguiente!',
+      jugar_shuffle: 'Repetir',
+      bubble: 'Presiona el nombre para cambiar',
+      bubble2: 'Haz click aqui para empezar'
     }
   },
   'it': {
@@ -117,7 +135,9 @@ var lang = {
       resetconfirm: 'Confermi il reset?',
       save: 'Salva',
       canvi: 'Cambia',
-      jugar: 'Gioca!'
+      jugar: 'Gioca!',
+      jugar_next: 'Il prossimo!',
+      jugar_shuffle: 'Mescolare'
     }
   },
   'tp': {
@@ -141,7 +161,9 @@ var lang = {
       resetconfirm: 'sina wile ala wile weka e ijo?',
       save: 'awen sona',
       canvi: 'ante',
-      jugar: 'open!'
+      jugar: 'open!',
+      jugar_next: 'jan ante',
+      jugar_shuffle: 'pali ante'
     }
   }
 }
@@ -178,5 +200,6 @@ function getLang() {
 }
 
 function getString(s) {
-  return getLang().strings[s];
+  var q = getLang().strings[s];
+  return q || s;
 }

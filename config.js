@@ -45,6 +45,7 @@ function loadLanguage() {
   } else {
     g('sound').value = getString ('silence');
   }
+  g('vibrate').value = getString ((get('vibrate') == "true") ? 'vibrate' : 'novibrate');
 }
 
 window.addEventListener("DOMContentLoaded", function() {
@@ -94,6 +95,13 @@ window.addEventListener("DOMContentLoaded", function() {
       g('sound').value = getString ('silence');
     }
   });
+  onClick (g('vibrate'), function() {
+    if (g('vibrate').value == getString ('novibrate')) {
+      g('vibrate').value = getString ('vibrate');
+    } else {
+      g('vibrate').value = getString ('novibrate');
+    }
+  });
   g('duration').onkeydown = function(ev) {
     if (ev.keyCode == 13) {
       g('duration').blur();
@@ -101,6 +109,7 @@ window.addEventListener("DOMContentLoaded", function() {
   };
   onClick (g('desar'), function() {
     set('sound', (g('sound').value == getString('silence')) ? "false" : "true");
+    set('vibrate', (g('vibrate').value == getString('vibrate')) ? "true" : "false");
     set('duration', g('duration').value);
     var oldlang = get('lang');
     var newlang = g('lang').value;

@@ -18,10 +18,14 @@ function del(x) {
 }
 var nom1, nom2, curnom;
 
-function onClick(e, f) {
+function onClick(e, f, s) {
   var hasTouch = 'ontouchstart' in window;
   if (hasTouch) {
-    e.ontouchend = f;
+    if (s) {
+      e.ontouchstart = f;
+    } else {
+      e.ontouchend = f;
+    }
   } else {
     e.onmouseup = f;
   }
@@ -70,10 +74,10 @@ function setColors(inverse) {
 
 function flashScreen(reset) {
   var inverse = false;
+  clearInterval (bgflash);
   if (reset) {
     setColors (true);
   } else {
-    clearInterval (bgflash);
     bgflash = setInterval (function() {
       inverse = !inverse;
       setColors (inverse);
@@ -82,31 +86,45 @@ function flashScreen(reset) {
 }
 
 function ding() {
+  /* vibrate if possible */
+  var hasVibrate = get('vibrate') == "true";
+  if (hasVibrate) {
+    try {
+      window.navigator.vibrate(200);
+    } catch ( e ) {}
+  }
+  /* ding if selected */
   var hasSound = get('sound') == "true";
-  alert(get('sound'));
-  if (!hasSound) {
-    return;
+  if (hasSound) {
+    var audio = g('ding');
+    try {
+      audio.pause();
+      audio.currentTime = 0;
+    } catch ( e ) {
+      /* do nothing */
+    }
+    audio.play();
   }
-  var audio = g('ding');
-  try {
-    audio.pause();
-    audio.currentTime = 0;
-  } catch ( e ) {
-    /* do nothing */
-  }
-  try { /* vibrate if possible */
-    window.navigator.vibrate(200);
-  } catch ( e ) {}
-  audio.play();
 }
 
 function clearIntervals() {
-  clearInterval (int);
-  clearInterval (int2);
-  clearInterval (bgflash);
+  try {
+    clearInterval (int);
+  } catch ( e ) {}
+  try {
+    clearInterval (int2);
+  } catch ( e ) {}
+  try {
+    clearInterval (bgflash);
+  } catch ( e ) {}
+  flashScreen (true);
+  setColors (true);
 }
 
 window.addEventListener("load", function() {
+  g('bubble').innerHTML = getString ('bubble');
+  g('bubble2').innerHTML = getString ('bubble2');
+  g('rating').style.visibility = 'hidden';
   try {
     var noms = get('noms').split(',');
     nom1 = noms[0];
@@ -123,46 +141,71 @@ window.addEventListener("load", function() {
 
   var running = false;
   var counter = 0
-
-  onClick (g('jugar'), function() {
-    if (g('jugar').disabled)
-      return;
-    g('jugar').disabled = true;
-    if (running)
-      return false;
+  function disablePlayButton() {
     g('bubble').style.visibility = 'hidden';
     g('bubble2').style.visibility = 'hidden';
-    setColors (true);
+    g('rating').style.visibility = 'hidden';
+    g('jugar').style['top'] = '4px !important';
+    g('jugar').style['color'] = "#a0a0a0";
+    g('jugar').style['background-color'] = "#808080";
+    g('jugar').style['box-shadow'] = '0px 0px 0px #B379B3';
+    g('quan').style.visibility = 'visible';
     running = true;
+  }
+  function activatePlayButton() {
+    g('quan').style.visibility = 'hidden';
+    g('jugar').style['position'] = 'relative';
+    g('jugar').style['top'] = '3px !important';
+    g('jugar').style['color'] = "black";
+    g('jugar').style['background-color'] = "#c0c0c0";
+    g('jugar').style['box-shadow'] = '0px 4px 0px #B379B3';
+    running = false;
+  }
+  var doNext = false;
+
+  onClick (g('jugar'), function() {
+    if (doNext) {
+      doCanvi ();
+      doNext = false;
+    }
+    if (running)
+      return false;
+    g('jugar').value = getString ('jugar_shuffle');
+    clearIntervals (); // avoid mobile safari crash :D
+    disablePlayButton();
+    setColors (true);
     counter = 0;
-    timeleft = 0;
-    clearInterval (int);
+    timeleft = -1;
     int = setInterval (function() {
       g('verb').innerHTML = randomVerb();
       g('lloc').innerHTML = randomLloc();
       g('com').innerHTML = randomCom();
       counter++;
       if (counter == 30) {
+        activatePlayButton();
         clearIntervals ();
         timebase = +get("duration");
-        timeleft = ((Math.random() * plays) + 5) | 0;
+        timeleft = (Math.random() * plays) | 0;
         timeleft += timebase;
         setTimeout(function() {
-          running = false;
-          g('jugar').disabled = false;
-          if (timeleft > 0) {
-            g('quan').innerHTML = timeleft;
-          }
           clearInterval (int2);
+          g('quan').style.visibility = 'visible';
+          g('quan').innerHTML = timeleft;
           int2 = setInterval(function() {
             timeleft--;
-            g('quan').innerHTML = timeleft;
-            if (+timeleft < 1) {
-              timeleft = 0;
-              plays++;
+            if (timeleft < 0) {
               clearInterval (int2);
+              timeleft = -1;
+              plays++;
               flashScreen ();
               ding();
+              activatePlayButton();
+              g('quan').style.visibility = 'hidden';
+              g('rating').style.visibility = 'visible';
+              g('jugar').value = getString ('jugar_next');
+              doNext = true;
+            } else {
+              g('quan').innerHTML = timeleft;
             }
           }, 1000);
         }, 1000);
@@ -174,27 +217,48 @@ window.addEventListener("load", function() {
     g('com').innerHTML = "";
     g('quan').innerHTML = "";
   });
-  onClick (g('canvi'), function() {
-    running = false;
-    setColors (true);
-    try {
-      clearInterval (int);
-    } catch ( e ) {}
-    try {
-      clearInterval (int2);
-    } catch ( e ) {}
-    try {
-      clearInterval (bgflash);
-    } catch ( e ) {}
+  function doCanvi() {
+    clearIntervals ();
+    activatePlayButton();
+    g('jugar').value = getString ('jugar');
+    g('rating').style.visibility = 'hidden';
 
     g('nom').innerHTML = curnom = (curnom == nom1) ? nom2 : nom1;
     g('verb').innerHTML = "";
     g('lloc').innerHTML = "";
     g('com').innerHTML = "";
     g('quan').innerHTML = "";
+  }
+  onClick (g('canvi'), function() {
+    doCanvi ();
   });
   onClick (g('sortir'), function() {
     clearIntervals (); // avoid mobile safari crash :D
     location.href = "index.html";
   });
+
+  function setStars(n) {
+    for (i = 1; i < n + 1; i++) {
+      g('star' + i).src = 'img/star_gold.png';
+    }
+    for (; i < 6; i++) {
+      g('star' + i).src = 'img/star_grey.png';
+    }
+  }
+  onClick(g('star1'), function() {
+    setStars (1);
+  }, true);
+  onClick(g('star2'), function() {
+    setStars (2);
+  }, true);
+  onClick(g('star3'), function() {
+    setStars (3);
+  }, true);
+  onClick(g('star4'), function() {
+    setStars (4);
+  }, true);
+  onClick(g('star5'), function() {
+    setStars (5);
+  }, true);
+
 });

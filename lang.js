@@ -60,7 +60,7 @@ var lang = {
       bubble2: 'Tap here to start',
       vibrate: 'Vibrate',
       novibrate: 'Do not vibrate',
-      err_noteq: 'Cant have the same name',
+      err_noteq: 'Can\'t have the same name',
       err_data: 'Missing actions'
     }
   },
@@ -88,12 +88,12 @@ var lang = {
       jugar: 'Ludi!',
       jugar_next: 'Proksima ludanto!',
       jugar_shuffle: 'Miksi!',
-      bubble: 'Frapetu tie ŝanĝi',
-      bubble2: 'Frapetu tie komenci',
-      vibrate: 'Vibras',
-      novibrate: 'Ne vibras',
-      err_noteq: 'ne povas havi la saman nomon',
-      err_data: 'neniu agoj difinita'
+      bubble: 'Frapetu la nomon por ŝanĝi ĝin',
+      bubble2: 'Frapetu por komenci',
+      vibrate: 'Vibri',
+      novibrate: 'Ne vibri',
+      err_noteq: 'La du ludantoj ne povas havi la saman nomon',
+      err_data: 'Neniu ago difinita'
     }
   },
   'es': {
@@ -152,12 +152,12 @@ var lang = {
       jugar: 'Gioca!',
       jugar_next: 'Il prossimo!',
       jugar_shuffle: 'Mescolare',
-      bubble: 'Click per cambiare giocatore',
-      bubble2: 'Toccare qui per iniziare',
-      vibrate: 'Vibra',
-      novibrate: 'Non vibra',
-      err_noteq: 'Non possono essere chiamati uguale',
-      err_data: 'Dati mancanti'
+      bubble: 'Premi qui per cambiare giocatore',
+      bubble2: 'Premi qui per iniziare',
+      vibrate: 'Vibrare',
+      novibrate: 'Non vibrare',
+      err_noteq: 'I giocatori non possono avere lo stesso nome',
+      err_data: 'Nessuna azione inserita'
     }
   },
   'tp': {

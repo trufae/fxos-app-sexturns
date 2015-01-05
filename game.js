@@ -148,6 +148,7 @@ window.addEventListener("load", function() {
     g('bubble').style.visibility = 'hidden';
     g('bubble2').style.visibility = 'hidden';
     g('rating').style.visibility = 'hidden';
+    g('jugar').style['position'] = 'relative';
     g('jugar').style['top'] = '4px !important';
     g('jugar').style['color'] = "#a0a0a0";
     g('jugar').style['background-color'] = "#808080";
@@ -157,7 +158,7 @@ window.addEventListener("load", function() {
   }
   function activatePlayButton() {
     g('quan').style.visibility = 'hidden';
-    g('jugar').style['position'] = 'relative';
+    g('jugar').style['position'] = '';
     g('jugar').style['top'] = '3px !important';
     g('jugar').style['color'] = "black";
     g('jugar').style['background-color'] = "#c0c0c0";
@@ -192,25 +193,31 @@ window.addEventListener("load", function() {
         timebase = +get("duration");
         timeleft = (Math.random() * plays) | 0;
         timeleft += timebase;
+        g('quan').style.visibility = 'visible';
+        g('quan').innerHTML = timeleft;
+        timeleft--;
         to0 = setTimeout(function() {
           clearInterval (int2);
-          g('quan').style.visibility = 'visible';
           g('quan').innerHTML = timeleft;
           int2 = setInterval(function() {
             timeleft--;
             if (timeleft < 0) {
+              g('quan').style.visibility = 'hidden';
               clearInterval (int2);
               timeleft = -1;
               plays++;
               flashScreen ();
-              ding();
               activatePlayButton();
-              g('quan').style.visibility = 'hidden';
               g('rating').style.visibility = 'visible';
               g('jugar').value = getString ('jugar_next');
               doNext = true;
             } else {
-              g('quan').innerHTML = timeleft;
+              if (timeleft == 0) {
+                ding();
+                g('quan').style.visibility = 'hidden';
+              } else {
+                g('quan').innerHTML = timeleft;
+              }
             }
           }, 1000);
         }, 1000);

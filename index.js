@@ -36,7 +36,7 @@ document.ontouchmove = function(event) {
 function validate() {
   if (g('nom1').value && g('nom2').value) {
     if (g('nom1').value == g('nom2').value) {
-      alert ("No es poden dir igual");
+      alert (getString('err_noteq'));
       return false;
     }
     if (get('v1') && get ('v2')) {
@@ -45,7 +45,7 @@ function validate() {
       }
     }
   }
-  alert ("Falten dades");
+  alert (getString("err_data"));
   return false;
 }
 
@@ -56,7 +56,22 @@ window.addEventListener("DOMContentLoaded", function() {
     g('nom1').value = noms[0];
     g('nom2').value = noms[1];
     // set strings
-  } catch ( e ) {}
+  } catch ( e ) {
+    g('nom1').value = "Foo";
+    g('nom2').value = "Bar";
+  }
+  if (!get("v1")) {
+    set("v1", getLang().actions.join ("\n"));
+  }
+  if (!get("v2")) {
+    set("v2", getLang().actions.join ("\n"));
+  }
+  if (!get("l1")) {
+    set("l1", getLang().places.join ("\n"));
+  }
+  if (!get("l2")) {
+    set("l2", getLang().places.join ("\n"));
+  }
 
   g('text_firstplayer').innerHTML = getString ('firstplayer');
   g('text_secondplayer').innerHTML = getString ('secondplayer');

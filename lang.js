@@ -28,6 +28,8 @@ var lang = {
       bubble2: 'Clicka aqui per començar',
       vibrate: 'Vibrar',
       novibrate: 'No vibrar',
+      err_noteq: 'No es poden dir igual',
+      err_data: 'Falten dades'
     }
   },
   'en': {
@@ -58,6 +60,8 @@ var lang = {
       bubble2: 'Tap here to start',
       vibrate: 'Vibrate',
       novibrate: 'Do not vibrate',
+      err_noteq: 'Cant have the same name',
+      err_data: 'Missing actions'
     }
   },
   'eo': {
@@ -88,6 +92,8 @@ var lang = {
       bubble2: 'Frapetu tie komenci',
       vibrate: 'Vibras',
       novibrate: 'Ne vibras',
+      err_noteq: 'ne povas havi la saman nomon',
+      err_data: 'neniu agoj difinita'
     }
   },
   'es': {
@@ -118,13 +124,15 @@ var lang = {
       bubble2: 'Haz click aqui para empezar',
       vibrate: 'Vibrar',
       novibrate: 'No vibrar',
+      err_noteq: 'No pueden llamarse igual',
+      err_data: 'Faltan datos'
     }
   },
   'it': {
     name: 'Italiano',
     how: ['forte', 'dolcemente', 'velocemente', 'lentamente'],
     actions: ['mordi', 'succhia', 'bacia', 'premi', 'pizzica', 'massaggia'],
-    places: ['le tette', 'i genitali', 'i capezzoli', 'il collo', 'le labbra', 'l\'orecchio', 'il clitoride/il glande', 'il culo'],
+    places: ['le tette', 'i genitali', 'i capezzoli', 'il collo', 'le labbra', 'l\'orecchio', 'il cli./glande', 'il culo'],
     strings: {
       firstplayer: 'Primo giocatore',
       secondplayer: 'Secondo giocatore',
@@ -148,6 +156,8 @@ var lang = {
       bubble2: 'Toccare qui per iniziare',
       vibrate: 'Vibra',
       novibrate: 'Non vibra',
+      err_noteq: 'Non possono essere chiamati uguale',
+      err_data: 'Dati mancanti'
     }
   },
   'tp': {
@@ -178,6 +188,8 @@ var lang = {
       bubble2: 'pilin tawa musi',
       vibrate: 'pilin tawa',
       novibrate: 'pilin tawa ala',
+      err_noteq: 'nimi li sama',
+      err_data: 'pali nimi li lon ala'
     }
   }
 }

@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function() {
     var oldlang = get('lang');
     set('lang', g('lang').value);
     loadLanguage();
-    set('lang', oldlang);
+    //set('lang', oldlang);
   }
   loadLanguage ();
   /* add button callbacks */

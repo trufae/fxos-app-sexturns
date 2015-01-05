@@ -148,8 +148,8 @@ window.addEventListener("load", function() {
     g('bubble').style.visibility = 'hidden';
     g('bubble2').style.visibility = 'hidden';
     g('rating').style.visibility = 'hidden';
-    g('jugar').style['position'] = 'relative';
-    g('jugar').style['top'] = '4px !important';
+    g('jugar').style.position = 'relative';
+    g('jugar').style.top = '4px !important';
     g('jugar').style['color'] = "#a0a0a0";
     g('jugar').style['background-color'] = "#808080";
     g('jugar').style['box-shadow'] = '0px 0px 0px #B379B3';
@@ -159,7 +159,7 @@ window.addEventListener("load", function() {
   function activatePlayButton() {
     g('quan').style.visibility = 'hidden';
     g('jugar').style['position'] = '';
-    g('jugar').style['top'] = '3px !important';
+    g('jugar').style['top'] = '0px !important';
     g('jugar').style['color'] = "black";
     g('jugar').style['background-color'] = "#c0c0c0";
     g('jugar').style['box-shadow'] = '0px 4px 0px #B379B3';
@@ -192,6 +192,10 @@ window.addEventListener("load", function() {
         clearIntervals ();
         timebase = +get("duration");
         timeleft = (Math.random() * plays) | 0;
+        if (timebase < 1) {
+	  set("duration", "40");
+          timebase = 40;
+        }
         timeleft += timebase;
         g('quan').style.visibility = 'visible';
         g('quan').innerHTML = timeleft;
@@ -205,6 +209,7 @@ window.addEventListener("load", function() {
               clearInterval (int2);
               timeleft = -1;
               plays++;
+	      g('quan').style.visibility = 'hidden';
               g('rating').style.visibility = 'visible';
               doNext = true;
             } else {

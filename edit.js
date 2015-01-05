@@ -27,6 +27,10 @@ document.ontouchmove = function(event) {
   event.preventDefault();
 }
 
+g('data').onblur = function() {
+  window.scrollTo(0,0);
+}
+
 window.addEventListener("load", function() {
   g('desar').value = getString('save');
   try {

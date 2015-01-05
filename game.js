@@ -202,18 +202,17 @@ window.addEventListener("load", function() {
           int2 = setInterval(function() {
             timeleft--;
             if (timeleft < 0) {
-              g('quan').style.visibility = 'hidden';
               clearInterval (int2);
               timeleft = -1;
               plays++;
-              flashScreen ();
-              activatePlayButton();
               g('rating').style.visibility = 'visible';
-              g('jugar').value = getString ('jugar_next');
               doNext = true;
             } else {
               if (timeleft == 0) {
                 ding();
+                flashScreen ();
+                activatePlayButton();
+                g('jugar').value = getString ('jugar_next');
                 g('quan').style.visibility = 'hidden';
               } else {
                 g('quan').innerHTML = timeleft;

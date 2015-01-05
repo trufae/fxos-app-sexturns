@@ -13,5 +13,16 @@
     "60": "/icons/icon60x60.png",
     "128": "/icons/icon128x128.png"
   },
-  "orientation":["portrait"]
+  "orientation":["portrait"],
+	"locales": {
+    "eo": {
+      "name": "SexTurn",
+      "description": "Turne baziĝita erotika ludo",
+    },
+    "it": {
+      "name": "SexTurn",
+      "description": "Gioco erotico a turni",
+    }
+  },
+  "default_locale": "en"
 }

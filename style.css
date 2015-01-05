@@ -11,10 +11,6 @@ h2 {
 body,.body {
 	overflow: hidden;
 	margin:0px;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select:none;
-	user-select:none;
 	color: white;
 	font-family: Arial;
         border: 0px solid black;

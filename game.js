@@ -1,6 +1,6 @@
 /* globals */
 var plays = 0;
-var int, int2, timeleft;
+var to0, int, int2, timeleft;
 var bgflash;
 
 function g(x) {
@@ -109,6 +109,9 @@ function ding() {
 
 function clearIntervals() {
   try {
+    clearTimeout (to0);
+  } catch ( e ) {}
+  try {
     clearInterval (int);
   } catch ( e ) {}
   try {
@@ -167,6 +170,8 @@ window.addEventListener("load", function() {
     if (doNext) {
       doCanvi ();
       doNext = false;
+    } else {
+      setStars(0);
     }
     if (running)
       return false;
@@ -187,7 +192,7 @@ window.addEventListener("load", function() {
         timebase = +get("duration");
         timeleft = (Math.random() * plays) | 0;
         timeleft += timebase;
-        setTimeout(function() {
+        to0 = setTimeout(function() {
           clearInterval (int2);
           g('quan').style.visibility = 'visible';
           g('quan').innerHTML = timeleft;
@@ -218,6 +223,7 @@ window.addEventListener("load", function() {
     g('quan').innerHTML = "";
   });
   function doCanvi() {
+    setStars(0);
     clearIntervals ();
     activatePlayButton();
     g('jugar').value = getString ('jugar');
@@ -230,6 +236,7 @@ window.addEventListener("load", function() {
     g('quan').innerHTML = "";
   }
   onClick (g('canvi'), function() {
+    doNext = false;
     doCanvi ();
   });
   onClick (g('sortir'), function() {

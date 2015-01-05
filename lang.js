@@ -15,8 +15,6 @@ var lang = {
       idioma: 'Idioma',
       duration: 'Duració de les accions (en segons)',
       audio: 'Senyalitzacions',
-      vibrate: 'Vibrar',
-      novibrate: 'No vibrar',
       silence: 'Silenci',
       withsound: 'So Habilitat',
       reset: 'Esborrar-ho Tot',
@@ -27,7 +25,9 @@ var lang = {
       jugar_next: 'Següent jugador!',
       jugar_shuffle: 'Repetir',
       bubble: 'Prem aquí per canviar',
-      bubble2: 'Clicka aqui per començar'
+      bubble2: 'Clicka aqui per començar',
+      vibrate: 'Vibrar',
+      novibrate: 'No vibrar',
     }
   },
   'en': {
@@ -55,7 +55,9 @@ var lang = {
       jugar_next: 'Next player!',
       jugar_shuffle: 'Shuffle',
       bubble: 'Tap name to change player',
-      bubble2: 'Tap here to start'
+      bubble2: 'Tap here to start',
+      vibrate: 'Vibrate',
+      novibrate: 'Do not vibrate',
     }
   },
   'eo': {
@@ -82,8 +84,10 @@ var lang = {
       jugar: 'Ludi!',
       jugar_next: 'Proksima ludanto!',
       jugar_shuffle: 'Miksi!',
-      bubble: 'Tap name to change player',
-      bubble2: 'Tap here to start'
+      bubble: 'Frapetu tie ŝanĝi',
+      bubble2: 'Frapetu tie komenci',
+      vibrate: 'Vibras',
+      novibrate: 'Ne vibras',
     }
   },
   'es': {
@@ -100,7 +104,7 @@ var lang = {
       start: 'Empezar',
       idioma: 'Idioma',
       duration: 'Duración de las acciones (en segundos)',
-      audio: 'Señal Auditiva',
+      audio: 'Señales',
       silence: 'Silencio',
       withsound: 'Sonido Habilitado',
       reset: 'Eliminar Datos',
@@ -111,7 +115,9 @@ var lang = {
       jugar_next: 'Siguiente!',
       jugar_shuffle: 'Repetir',
       bubble: 'Presiona el nombre para cambiar',
-      bubble2: 'Haz click aqui para empezar'
+      bubble2: 'Haz click aqui para empezar',
+      vibrate: 'Vibrar',
+      novibrate: 'No vibrar',
     }
   },
   'it': {
@@ -137,14 +143,18 @@ var lang = {
       canvi: 'Cambia',
       jugar: 'Gioca!',
       jugar_next: 'Il prossimo!',
-      jugar_shuffle: 'Mescolare'
+      jugar_shuffle: 'Mescolare',
+      bubble: 'Click per cambiare giocatore',
+      bubble2: 'Toccare qui per iniziare',
+      vibrate: 'Vibra',
+      novibrate: 'Non vibra',
     }
   },
   'tp': {
     name: 'Tokipona',
     how: ['wawa', 'wawa ala', 'wawa tawa', 'wawa tawa lili'],
     actions: ['moku', 'uta', 'pana e uta', 'o kama jo', 'pakala lili', 'pona e sijelo'],
-    places: ['nena sike', 'anpa lawa', 'uta', 'kute', 'palisa mije/lupa meli', 'monsi'],
+    places: ['nena sike', 'anpa lawa', 'uta', 'kute', 'palisa/lupa', 'monsi'],
     strings: {
       firstplayer: 'jan pi nanpa wan',
       secondplayer: 'jan pi nanpa tu',
@@ -163,7 +173,11 @@ var lang = {
       canvi: 'ante',
       jugar: 'open!',
       jugar_next: 'jan ante',
-      jugar_shuffle: 'pali ante'
+      jugar_shuffle: 'pali ante',
+      bubble: 'jan nimi ante',
+      bubble2: 'pilin tawa musi',
+      vibrate: 'pilin tawa',
+      novibrate: 'pilin tawa ala',
     }
   }
 }

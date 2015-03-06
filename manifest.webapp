@@ -17,11 +17,11 @@
 	"locales": {
     "eo": {
       "name": "SexTurn",
-      "description": "Turne baziĝita erotika ludo",
+      "description": "Turne bazigita erotika ludo"
     },
     "it": {
       "name": "SexTurn",
-      "description": "Gioco erotico a turni",
+      "description": "Gioco erotico a turni"
     }
   },
   "default_locale": "en"

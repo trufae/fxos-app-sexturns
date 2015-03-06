@@ -138,7 +138,7 @@ color:black;
 position: absolute;
 top:110px;
 left:32px;
-border: 1px solid white;
+border: 2px solid #f0f0f0;
 color:#303030;
 padding: 0px;
 padding-top:20px;
@@ -175,7 +175,7 @@ left: 158px;
 {
 position: absolute;
 width: 250px;
-border: 1px solid white;
+border: 2px solid #f0f0f0;
 color:#303030;
 padding: 0px;
 padding-top:20px;
